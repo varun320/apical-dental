@@ -1,29 +1,22 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, IBM_Plex_Mono, Geist } from "next/font/google";
+import { Space_Grotesk, Inter, Geist } from "next/font/google";
 import { LenisProvider } from "@/lib/lenis";
-import "./globals.css";
 import { cn } from "@/lib/utils";
+import "./globals.css";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
-const syne = Syne({
-  variable: "--font-syne",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
@@ -48,9 +41,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", syne.variable, dmSans.variable, ibmPlexMono.variable, "font-sans", geist.variable)}
+      className={cn(
+        "h-full antialiased",
+        geist.variable,
+        spaceGrotesk.variable,
+        inter.variable,
+        "font-sans"
+      )}
     >
-      <body className="min-h-full flex flex-col bg-void text-primary">
+      <body className="min-h-full flex flex-col bg-void text-white-pure">
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

@@ -2,8 +2,8 @@ export const siteConfig = {
   name: "Apical Dental",
   tagline: "The apex of the craft. In every sense.",
   headline: {
-    line1: "Human expertise.",
-    line2: "Robotic precision.",
+    line1: "Human Expertise.",
+    line2: "Robotic Precision.",
   },
   description:
     "Pioneering the integration of Tesla's Optimus humanoid robot into dental laboratory procedures — delivering surgical-grade accuracy at unprecedented scale.",
@@ -22,6 +22,6 @@ export const siteConfig = {
     { value: 40, suffix: "+", label: "Years Expertise" },
     { value: 800, suffix: "+", label: "Adaptations" },
     { value: 500, suffix: "+", label: "DSO Offices" },
-    { value: 0, suffix: "", label: "Regulatory Barriers", accent: true },
+    { value: 0, suffix: "", label: "Regulatory Barriers" },
   ],
 } as const;
