@@ -87,7 +87,7 @@ export function Hero() {
               <div className="font-display text-[44px] font-[800] leading-none tracking-[-1.5px] text-primary-text">
                 <NumberTicker value={stat.value} delay={0.8} />{stat.suffix}
               </div>
-              <p className="mt-3 font-mono text-[11px] uppercase tracking-[2.5px] text-secondary">{stat.label}</p>
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[2.5px] text-surface">{stat.label}</p>
             </div>
           ))}
         </div>
