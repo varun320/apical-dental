@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
+import type { LucideIcon } from "lucide-react";
 
 interface DataCardProps {
   stat?: string;
   label?: string;
   title?: string;
   description: string;
-  icon?: string;
+  icon?: LucideIcon;
   className?: string;
 }
 
@@ -14,31 +15,33 @@ export function DataCard({
   label,
   title,
   description,
-  icon,
+  icon: Icon,
   className,
 }: DataCardProps) {
   return (
     <div
       className={cn(
-        "rounded-lg border border-titanium-dark bg-deep-void p-7 transition-colors hover:border-titanium/40",
+        "rounded-xl border border-apical-border bg-surface p-7",
+        "shadow-[0_2px_20px_rgba(0,0,0,0.3)]",
+        "transition-all duration-300 hover:border-muted/50 hover:shadow-[0_4px_30px_rgba(0,0,0,0.5)]",
         className
       )}
     >
-      {icon && (
-        <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-md border border-titanium-dark bg-void font-display text-[11px] tracking-[1px] text-titanium">
-          {icon}
+      {Icon && (
+        <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg border border-apical-border bg-void text-cyan">
+          <Icon size={20} strokeWidth={1.5} />
         </div>
       )}
 
       {stat && (
-        <div className="font-display text-[36px] font-bold leading-none tracking-[-1px] text-white-pure">
+        <div className="font-display text-[44px] font-[800] leading-none tracking-[-1.5px] text-primary-text">
           {stat}
         </div>
       )}
 
       {label && (
         <p className={cn(
-          "font-display text-[10px] font-semibold uppercase tracking-[2px] text-titanium",
+          "font-mono text-[11px] uppercase tracking-[2.5px] text-muted",
           stat ? "mt-2" : ""
         )}>
           {label}
@@ -46,13 +49,13 @@ export function DataCard({
       )}
 
       {title && (
-        <h3 className="font-display text-[18px] font-semibold leading-[1.4] text-white-pure">
+        <h3 className="font-body text-[18px] font-medium leading-[1.4] text-primary-text">
           {title}
         </h3>
       )}
 
       <p className={cn(
-        "font-body text-[14px] leading-[1.75] text-titanium-light",
+        "font-body text-[14px] leading-[1.75] text-subtext",
         (title || stat || label) ? "mt-3" : ""
       )}>
         {description}

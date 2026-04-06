@@ -20,13 +20,13 @@ export function SectionHeader({
   return (
     <div className={alignment}>
       <FadeIn>
-        <p className="font-display text-[11px] font-semibold uppercase tracking-[3px] text-titanium">
+        <p className="font-mono text-[11px] font-normal uppercase tracking-[2.5px] text-muted">
           {label}
         </p>
       </FadeIn>
 
       <FadeIn delay={0.1}>
-        <h2 className="mt-4 font-display text-[clamp(24px,4vw,30px)] font-bold leading-[1.1] tracking-[-0.5px] text-white-pure">
+        <h2 className="mt-5 font-display text-[clamp(24px,4vw,34px)] font-bold leading-[1.1] tracking-[-1px] text-primary-text">
           {title}
         </h2>
       </FadeIn>
@@ -34,8 +34,8 @@ export function SectionHeader({
       {description && (
         <FadeIn delay={0.2}>
           <p
-            className={`mt-6 font-body text-[15px] leading-[1.7] text-titanium-light ${
-              center ? "mx-auto max-w-[580px]" : "max-w-[640px]"
+            className={`mt-6 font-body text-[16px] leading-[1.8] text-subtext ${
+              center ? "mx-auto max-w-[560px]" : "max-w-[600px]"
             }`}
           >
             {description}
