@@ -134,7 +134,7 @@ export function Hero() {
           >
             Explore the Technology &rarr;
           </Link>
-          <button className="rounded-md border border-titanium-dark px-7 py-3.5 text-[12px] font-medium tracking-[0.5px] text-titanium-light transition-all hover:border-titanium hover:text-white-pure">
+          <button className="rounded-md bg-deep-void border border-titanium-dark px-7 py-3.5 text-[12px] font-medium tracking-[0.5px] text-titanium-light transition-all hover:border-titanium hover:text-white-pure">
             Watch Demo
           </button>
         </div>
