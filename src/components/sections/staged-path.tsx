@@ -43,7 +43,7 @@ export function StagedPath() {
   return (
     <section className="relative  bg-void px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(13,13,28,0.5)_100%)]" />
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-px bg-[linear-gradient(to_bottom,transparent,rgba(0,212,200,0.1)_50%,transparent)]" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-px bg-[linear-gradient(to_bottom,transparent,rgba(59,130,246,0.1)_50%,transparent)]" />
 
       <div className="relative z-10 mx-auto max-w-[1100px]">
         <SectionHeader
@@ -55,11 +55,11 @@ export function StagedPath() {
         {/* Horizontal progress bar */}
         <div ref={containerRef} className="mt-16">
           <div className="relative mb-10 h-px w-full bg-apical-border">
-            <div ref={progressRef} className="h-full w-full bg-cyan shadow-[0_0_8px_rgba(0,212,200,0.4)]" />
+            <div ref={progressRef} className="h-full w-full bg-cyan shadow-[0_0_8px_rgba(59,130,246,0.4)]" />
             {/* Step dots */}
             <div className="absolute -top-[5px] left-0 flex w-full justify-between">
               {stages.map((s, i) => (
-                <div key={i} className={`h-[10px] w-[10px] rounded-full border-2 ${s.active ? "border-cyan bg-cyan shadow-[0_0_10px_rgba(0,212,200,0.5)]" : "border-apical-border bg-void"}`} />
+                <div key={i} className={`h-[10px] w-[10px] rounded-full border-2 ${s.active ? "border-cyan bg-cyan shadow-[0_0_10px_rgba(59,130,246,0.5)]" : "border-apical-border bg-void"}`} />
               ))}
             </div>
           </div>
@@ -72,7 +72,7 @@ export function StagedPath() {
                   className={`h-full rounded-xl border p-7 shadow-[0_2px_20px_rgba(0,0,0,0.3)] ${
                     stage.active ? "border-cyan/30 bg-surface" : "border-apical-border bg-surface"
                   }`}
-                  gradientColor={stage.active ? "rgba(0,212,200,0.08)" : "rgba(200,200,220,0.04)"}
+                  gradientColor={stage.active ? "rgba(59,130,246,0.08)" : "rgba(200,200,220,0.04)"}
                   gradientSize={200}
                 >
                   <div className="relative z-10">

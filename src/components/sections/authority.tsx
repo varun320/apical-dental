@@ -102,7 +102,7 @@ export function Authority() {
                 transferred directly to Optimus for robotic replication. Camera/sensor fingertip technology.
                 64 degrees of freedom.
               </p>
-              <BorderBeam size={100} duration={10} colorFrom="#00D4C8" colorTo="#1A1A2E" borderWidth={1} />
+              <BorderBeam size={100} duration={10} colorFrom="#3B82F6" colorTo="#1A1A2E" borderWidth={1} />
             </div>
           </BlurFade>
         </div>

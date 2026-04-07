@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const baseInputStyles =
-  "rounded-lg border border-apical-border bg-void px-5 py-3.5 font-body text-[14px] text-primary-text placeholder:text-muted outline-none transition-all focus:border-cyan focus:shadow-[0_0_0_2px_rgba(0,212,200,0.1)]";
+  "rounded-lg border border-apical-border bg-void px-5 py-3.5 font-body text-[14px] text-primary-text placeholder:text-muted outline-none transition-all focus:border-cyan focus:shadow-[0_0_0_2px_rgba(59,130,246,0.1)]";
 
 interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;

@@ -44,7 +44,7 @@ export function Navbar() {
 
         <Link
           href={siteConfig.cta.href}
-          className="hidden rounded-lg bg-cyan px-5 py-2.5 text-[12px] font-bold tracking-wide text-void shadow-[0_0_20px_rgba(0,212,200,0.2)] transition-all hover:shadow-[0_0_30px_rgba(0,212,200,0.35)] md:block"
+          className="hidden rounded-lg bg-cyan px-5 py-2.5 text-[12px] font-bold tracking-wide text-void shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] md:block"
         >
           {siteConfig.cta.primary}
         </Link>

@@ -22,7 +22,7 @@ export function DSOCase() {
   return (
     <section className="relative  bg-void px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(139,139,168,0.3) 3px, rgba(139,139,168,0.3) 4px)" }} />
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-80 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(0,212,200,0.03),transparent_70%)]" />
+      <div className="pointer-events-none absolute -top-32 left-1/2 h-80 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(59,130,246,0.03),transparent_70%)]" />
 
       <div className="relative z-10 mx-auto max-w-[1100px]">
         <SectionHeader
@@ -48,7 +48,7 @@ export function DSOCase() {
             <BlurFade key={b.title} delay={0.1 + i * 0.1} inView>
               <MagicCard
                 className="h-full rounded-xl border border-apical-border bg-surface p-8 shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
-                gradientColor="rgba(0,212,200,0.06)"
+                gradientColor="rgba(59,130,246,0.06)"
                 gradientSize={200}
               >
                 <div className="relative z-10">
@@ -79,7 +79,7 @@ export function DSOCase() {
                 </p>
               </div>
               <div className="shrink-0 text-right">
-                <div className="font-display text-[52px] font-[800] leading-none tracking-[-2px] text-cyan drop-shadow-[0_0_20px_rgba(0,212,200,0.2)]">$11M+</div>
+                <div className="font-display text-[52px] font-[800] leading-none tracking-[-2px] text-cyan drop-shadow-[0_0_20px_rgba(59,130,246,0.2)]">$11M+</div>
                 <p className="mt-2 font-mono text-[11px] uppercase tracking-[2px] text-secondary">Annual Revenue Target</p>
               </div>
             </div>

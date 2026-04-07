@@ -15,7 +15,7 @@ const problems = [
 export function Problem() {
   return (
     <section className="relative bg-void px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
-      <div className="pointer-events-none absolute -top-48 right-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(0,212,200,0.03),transparent_70%)]" />
+      <div className="pointer-events-none absolute -top-48 right-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.03),transparent_70%)]" />
 
       <div className="relative z-10 mx-auto max-w-[900px]">
         {/* Centered header — Vite-style */}
@@ -32,12 +32,12 @@ export function Problem() {
             <BlurFade key={p.label} delay={0.1 + i * 0.1} inView>
               <MagicCard
                 className="h-full rounded-xl border border-apical-border bg-surface p-8 text-center shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
-                gradientColor="rgba(0,212,200,0.08)"
+                gradientColor="rgba(59,130,246,0.08)"
                 gradientSize={250}
               >
                 <div className="relative z-10 flex flex-col items-center">
                   {/* Icon */}
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-apical-border bg-void text-cyan shadow-[0_0_20px_rgba(0,212,200,0.08)]">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-apical-border bg-void text-cyan shadow-[0_0_20px_rgba(59,130,246,0.08)]">
                     <p.icon size={24} strokeWidth={1.5} />
                   </div>
 

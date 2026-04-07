@@ -24,7 +24,7 @@ export function RobotScope() {
         width={24} height={24} cr={0.6}
         className={cn("mask-[radial-gradient(700px_circle_at_50%_50%,white,transparent)]")}
       />
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,212,200,0.02),transparent_60%)]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.02),transparent_60%)]" />
 
       <div className="relative z-10 mx-auto max-w-[1100px]">
         {/* Top: header left + robot right */}
@@ -38,7 +38,7 @@ export function RobotScope() {
           {/* Robot illustration — sticky on desktop */}
           <BlurFade delay={0.2} inView>
             <div className="hidden lg:flex justify-center">
-              <RobotIllustration className="h-[360px] w-auto drop-shadow-[0_0_40px_rgba(0,212,200,0.08)]" />
+              <RobotIllustration className="h-[360px] w-auto drop-shadow-[0_0_40px_rgba(59,130,246,0.08)]" />
             </div>
           </BlurFade>
         </div>
@@ -49,7 +49,7 @@ export function RobotScope() {
             <BlurFade key={cap.title} delay={0.15 + i * 0.08} inView>
               <MagicCard
                 className="h-full rounded-xl border border-apical-border bg-void p-7 shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
-                gradientColor="rgba(0,212,200,0.06)"
+                gradientColor="rgba(59,130,246,0.06)"
                 gradientSize={200}
               >
                 <div className="relative z-10">

@@ -34,7 +34,7 @@ export function Hero() {
           className={cn( "mask-[linear-gradient(to_bottom,white_0%,white_40%,transparent_80%)]")}
         />
       </div>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_-10%,rgba(0,212,200,0.04),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_-10%,rgba(59,130,246,0.04),transparent)]" />
       {/* Retro grid — subtle perspective grid at bottom */}
       <RetroGrid className="pointer-events-none absolute bottom-0 opacity-[0.03]" />
       {/* Bottom fade to next section */}
@@ -62,7 +62,7 @@ export function Hero() {
         </p>
 
         <div className="hero-anim mt-12 flex flex-wrap justify-center gap-5">
-          <Link href="/technology" className="flex items-center gap-2.5 rounded-xl bg-cyan px-8 py-4 text-[13px] font-bold tracking-[0.5px] text-void shadow-[0_0_30px_rgba(0,212,200,0.2)] transition-all hover:shadow-[0_0_50px_rgba(0,212,200,0.35)] hover:scale-[1.02]">
+          <Link href="/technology" className="flex items-center gap-2.5 rounded-xl bg-cyan px-8 py-4 text-[13px] font-bold tracking-[0.5px] text-void shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all hover:shadow-[0_0_50px_rgba(59,130,246,0.35)] hover:scale-[1.02]">
             Explore the Technology <ArrowRight size={16} />
           </Link>
           <button className="flex items-center gap-2.5 rounded-xl border border-apical-border px-8 py-4 text-[13px] font-medium text-subtext transition-all hover:border-secondary hover:text-primary-text hover:bg-surface/50">
@@ -74,7 +74,7 @@ export function Hero() {
       {/* ── Demo Video Box (Linear-style) ── */}
       <div className="hero-anim relative z-10 mx-auto mt-20 w-full max-w-[1000px]">
         {/* Glow behind the box */}
-        <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(0,212,200,0.06),transparent_70%)] blur-2xl" />
+        <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.06),transparent_70%)] blur-2xl" />
 
         {/* Browser chrome container */}
         <div className="relative overflow-hidden rounded-2xl border border-apical-border bg-surface shadow-[0_8px_60px_rgba(0,0,0,0.5),0_0_0_1px_rgba(26,26,46,0.5)]">
@@ -96,11 +96,11 @@ export function Hero() {
           <div className="relative aspect-[16/9] bg-void">
             {/* Abstract grid/pattern as placeholder visual */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(26,26,46,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(26,26,46,0.3)_1px,transparent_1px)] bg-[size:40px_40px]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,212,200,0.04),transparent_60%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.04),transparent_60%)]" />
 
             {/* Center play button */}
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full border border-apical-border bg-surface/60 backdrop-blur-md shadow-[0_0_40px_rgba(0,0,0,0.4)] transition-all hover:scale-110 hover:shadow-[0_0_50px_rgba(0,212,200,0.15)] cursor-pointer">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full border border-apical-border bg-surface/60 backdrop-blur-md shadow-[0_0_40px_rgba(0,0,0,0.4)] transition-all hover:scale-110 hover:shadow-[0_0_50px_rgba(59,130,246,0.15)] cursor-pointer">
                 <Play size={28} className="ml-1.5 text-cyan" />
               </div>
               <p className="font-mono text-[11px] uppercase tracking-[2.5px] text-secondary">
@@ -127,7 +127,7 @@ export function Hero() {
           </div>
 
           {/* Border beam effect */}
-          <BorderBeam size={150} duration={12} colorFrom="#00D4C8" colorTo="#1A1A2E" borderWidth={1} />
+          <BorderBeam size={150} duration={12} colorFrom="#3B82F6" colorTo="#1A1A2E" borderWidth={1} />
         </div>
       </div>
 

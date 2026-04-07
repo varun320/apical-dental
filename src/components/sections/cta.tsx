@@ -43,7 +43,7 @@ export function CTA() {
               <FormInput type="text" placeholder="Role" value={formData.role} onChange={updateField("role")} />
             </div>
             <FormTextarea placeholder="How can we help?" rows={5} value={formData.message} onChange={updateField("message")} />
-            <button type="submit" className="mt-3 flex items-center justify-center gap-2.5 rounded-xl bg-cyan px-8 py-4.5 font-display text-[14px] font-bold tracking-[0.5px] text-void shadow-[0_0_30px_rgba(0,212,200,0.2)] transition-all hover:shadow-[0_0_50px_rgba(0,212,200,0.35)] hover:scale-[1.02]">
+            <button type="submit" className="mt-3 flex items-center justify-center gap-2.5 rounded-xl bg-cyan px-8 py-4.5 font-display text-[14px] font-bold tracking-[0.5px] text-void shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all hover:shadow-[0_0_50px_rgba(59,130,246,0.35)] hover:scale-[1.02]">
               Send Message <Send size={16} />
             </button>
           </form>
