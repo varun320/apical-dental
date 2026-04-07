@@ -3,12 +3,20 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { gsap } from "@/lib/gsap";
-import { Particles } from "@/components/ui/particles";
-import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
-import { GeometricShapes } from "@/components/animations/geometric-shapes";
 import { NumberTicker } from "@/components/ui/number-ticker";
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import { Crown, Bot, Cpu, ShieldCheck, Clock, Wrench, Building2 } from "lucide-react";
+
+const FLOATING_ICONS = [
+  { Icon: Crown, top: "18%", left: "20%", size: 48, delay: "0s" },
+  { Icon: Bot, top: "25%", left: "72%", size: 56, delay: "1.5s" },
+  { Icon: Cpu, top: "35%", left: "35%", size: 40, delay: "3s" },
+  { Icon: ShieldCheck, top: "22%", left: "58%", size: 44, delay: "4.5s" },
+] as const;
+
+const STAT_ICONS = [Clock, Wrench, Building2, ShieldCheck] as const;
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -47,32 +55,45 @@ export function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-void px-6 pt-24 pb-20"
+      className="relative flex min-h-screen flex-col items-center overflow-hidden bg-linear-to-b from-void via-void to-deep-void px-6"
     >
-      {/* ── Background Layers (blurred for readability) ── */}
-      <div className="pointer-events-none absolute inset-0 blur-[2px]">
+      {/* ── Background ── */}
+      <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(154,154,176,0.08),transparent)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(26,26,42,0.4)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(26,26,42,0.3)_0%,transparent_50%)]" />
         <AnimatedGridPattern
-          numSquares={40}
-          maxOpacity={0.07}
-          duration={4}
-          repeatDelay={1}
+          numSquares={30}
+          maxOpacity={0.1}
+          duration={5}
+          repeatDelay={2}
           className={cn(
             "absolute inset-0 h-full w-full",
-            "mask-[linear-gradient(to_bottom,white_0%,white_60%,transparent_100%)]"
+            "mask-[radial-gradient(500px_circle_at_50%_60%,white,transparent)]"
           )}
         />
-        <Particles
-          className="absolute inset-0"
-          quantity={60}
-          color="#9A9AB0"
-          size={0.4}
-          staticity={60}
-          ease={120}
-        />
-        <GeometricShapes />
       </div>
+
+      {/* ── Floating dental/tech icons (upper area) ── */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[45%]">
+        {FLOATING_ICONS.map(({ Icon, top, left, size, delay }, i) => (
+          <Icon
+            key={i}
+            className="absolute text-titanium-light animate-float"
+            style={{
+              top,
+              left,
+              width: size,
+              height: size,
+              opacity: 0.08,
+              animationDelay: delay,
+            }}
+            strokeWidth={1}
+          />
+        ))}
+      </div>
+
+      {/* ── Spacer to push content to lower 60% ── */}
+      <div className="flex-1 min-h-[25vh]" />
 
       {/* ── Content ── */}
       <div className="relative z-10 mx-auto flex max-w-[800px] flex-col items-center text-center">
@@ -119,23 +140,30 @@ export function Hero() {
         </div>
       </div>
 
-      {/* ── Stats Bar ── */}
+      {/* ── Stats Bar — Bento Cards ── */}
       <div
         ref={statsRef}
-        className="relative z-10 mt-auto w-full max-w-[900px] border-t border-titanium-dark pt-10"
+        className="relative z-10 mt-auto w-full max-w-[900px] pb-12 pt-16"
       >
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {siteConfig.stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-display text-[34px] font-bold leading-none tracking-[-1.5px] text-white-pure">
-                <NumberTicker value={stat.value} delay={0.8} />
-                {stat.suffix}
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          {siteConfig.stats.map((stat, i) => {
+            const StatIcon = STAT_ICONS[i];
+            return (
+              <div
+                key={stat.label}
+                className="rounded-lg border border-titanium-dark bg-deep-void/50 px-5 py-4 text-center"
+              >
+                <StatIcon className="mx-auto mb-2 h-4 w-4 text-titanium" strokeWidth={1.5} />
+                <div className="font-display text-[28px] font-bold leading-none tracking-[-1.5px] text-white-pure">
+                  <NumberTicker value={stat.value} delay={0.8} />
+                  {stat.suffix}
+                </div>
+                <p className="mt-1.5 font-display text-[9px] font-semibold uppercase tracking-[2px] text-titanium">
+                  {stat.label}
+                </p>
               </div>
-              <p className="mt-2 font-display text-[10px] font-semibold uppercase tracking-[2px] text-titanium">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

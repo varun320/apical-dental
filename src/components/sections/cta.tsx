@@ -3,7 +3,7 @@
 import { FadeIn } from "@/components/animations/fade-in";
 import { SectionHeader } from "@/components/ui/section-header";
 import { FormInput, FormTextarea } from "@/components/ui/form-input";
-import { Ripple } from "@/components/ui/ripple";
+import { Mail, MessageSquare, Send } from "lucide-react";
 import { useState } from "react";
 
 export function CTA() {
@@ -24,9 +24,27 @@ export function CTA() {
   ) => setFormData((prev) => ({ ...prev, [field]: e.target.value }));
 
   return (
-    <section className="relative border-t border-titanium-dark bg-deep-void px-6 py-24 lg:py-32 overflow-hidden">
-      {/* Background ripple effect */}
-      <Ripple className="absolute inset-0 opacity-[0.04]" />
+    <section className="relative bg-linear-to-b from-void via-deep-void to-deep-void px-6 py-28 lg:py-36 overflow-hidden">
+      {/* ── Floating contact icons ── */}
+      <div className="pointer-events-none absolute inset-x-0 top-16 flex justify-center gap-16">
+        {[
+          { Icon: Mail, size: 32, delay: "0s" },
+          { Icon: MessageSquare, size: 28, delay: "2s" },
+          { Icon: Send, size: 30, delay: "4s" },
+        ].map(({ Icon, size, delay }, i) => (
+          <Icon
+            key={i}
+            className="text-titanium-light animate-float"
+            style={{
+              width: size,
+              height: size,
+              opacity: 0.07,
+              animationDelay: delay,
+            }}
+            strokeWidth={1}
+          />
+        ))}
+      </div>
 
       <div className="relative z-10 mx-auto max-w-[700px]">
         <SectionHeader

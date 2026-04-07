@@ -2,64 +2,69 @@
 
 import { StaggerFadeIn } from "@/components/animations/fade-in";
 import { SectionHeader } from "@/components/ui/section-header";
-import { DataCard } from "@/components/ui/data-card";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
+import { Crown, BrainCircuit, Sparkles, Package, MessageSquare, Wrench } from "lucide-react";
 
 const capabilities = [
   {
-    icon: "01",
+    icon: Crown,
     title: "Prosthetic Fabrication",
     description:
       "Surgical-grade dental prosthetics manufactured with superhuman precision. Every crown, bridge, and implant — perfect on delivery.",
+    featured: true,
   },
   {
-    icon: "02",
+    icon: BrainCircuit,
     title: "AI-Powered Diagnostics",
     description:
       "X-ray analysis with executive summaries for the doctor. Contraindication flagging. Instant, comprehensive, actionable.",
+    featured: true,
   },
   {
-    icon: "03",
+    icon: Sparkles,
     title: "Sterilization",
     description:
       "Automated instrument sterilization protocols. Consistent, documented, and compliant — every single time.",
+    featured: false,
   },
   {
-    icon: "04",
+    icon: Package,
     title: "Inventory Management",
     description:
       "Supply ordering with real-time market-price research. Automated procurement that saves money and eliminates stockouts.",
+    featured: false,
   },
   {
-    icon: "05",
+    icon: MessageSquare,
     title: "Patient Communication",
     description:
       "Real-time language translation. Appointment coordination. Insurance documentation — handled seamlessly.",
+    featured: false,
   },
   {
-    icon: "06",
+    icon: Wrench,
     title: "Facility Maintenance",
     description:
       "Equipment monitoring, maintenance scheduling, and facility operations. The robot manages the physical environment.",
+    featured: false,
   },
 ];
 
 export function RobotScope() {
   return (
-    <section className="relative border-t border-titanium-dark bg-deep-void px-6 py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-linear-to-b from-void via-deep-void to-deep-void px-6 py-28 lg:py-36 overflow-hidden">
       {/* Subtle dot pattern background */}
       <DotPattern
-        width={24}
-        height={24}
-        cr={0.8}
+        width={28}
+        height={28}
+        cr={0.6}
         className={cn(
-          "absolute inset-0 text-titanium-dark/50",
-          "mask-[radial-gradient(600px_circle_at_50%_50%,white,transparent)]"
+          
+          "mask-[radial-gradient(500px_circle_at_0%_50%,white,transparent)]"
         )}
       />
-
-      <div className="relative z-10 mx-auto max-w-[1100px]">
+      <div className="relative z-10 mx-auto max-w-275">
         <SectionHeader
           label="Full Scope"
           title="One robot. Every role."
@@ -67,18 +72,31 @@ export function RobotScope() {
         />
 
         <StaggerFadeIn
-          className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
           stagger={0.08}
         >
-          {capabilities.map((cap) => (
-            <DataCard
-              key={cap.title}
-              icon={cap.icon}
-              title={cap.title}
-              description={cap.description}
-              className="bg-void"
-            />
-          ))}
+          {capabilities.map((cap) => {
+            const Icon = cap.icon;
+            return (
+              <div
+                key={cap.title}
+                className={`rounded-lg border border-titanium-dark bg-void p-7 transition-colors hover:border-titanium/40 ${
+                  cap.featured ? "sm:col-span-2" : ""
+                }`}
+              >
+                <Icon
+                  className={`mb-4 text-titanium ${cap.featured ? "h-8 w-8" : "h-6 w-6"}`}
+                  strokeWidth={1.5}
+                />
+                <h3 className="font-display text-[18px] font-semibold leading-[1.4] text-white-pure">
+                  {cap.title}
+                </h3>
+                <p className="mt-3 font-body text-[14px] leading-[1.75] text-titanium-light">
+                  {cap.description}
+                </p>
+              </div>
+            );
+          })}
         </StaggerFadeIn>
       </div>
     </section>

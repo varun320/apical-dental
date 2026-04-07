@@ -1,14 +1,21 @@
 "use client";
 
-import { FadeIn, StaggerFadeIn } from "@/components/animations/fade-in";
+import { StaggerFadeIn } from "@/components/animations/fade-in";
 import { SectionHeader } from "@/components/ui/section-header";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { Clock, Cog, Building2, GraduationCap, UserRound, Cpu } from "lucide-react";
+
+const authorityStats = [
+  { value: 40, suffix: "+", label: "Years in Prosthodontics", icon: Clock, delay: 0.4 },
+  { value: 800, suffix: "+", label: "Engineered Adaptations", icon: Cog, delay: 0.55 },
+  { value: 500, suffix: "+", label: "DSO Office Network", icon: Building2, delay: 0.7 },
+  { value: 15, suffix: "+", label: "Years Training Surgeons", icon: GraduationCap, delay: 0.85 },
+];
 
 export function Authority() {
   return (
-    <section className="relative border-t border-titanium-dark bg-deep-void px-6 py-24 lg:py-32 overflow-hidden">
-      {/* Bottom-left corner glow */}
+    <section className="relative bg-linear-to-b from-void via-deep-void to-deep-void px-6 py-28 lg:py-36 overflow-hidden">
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-100 w-100 rounded-full bg-[radial-gradient(circle,rgba(154,154,176,0.05),transparent_70%)]" />
       <div className="relative z-10 mx-auto max-w-[1100px]">
         <SectionHeader
@@ -22,7 +29,7 @@ export function Authority() {
           stagger={0.08}
         >
           {/* ─ Bio (spans 2 cols, 2 rows) ─ */}
-          <div className="rounded-lg border border-titanium-dark bg-void p-7 md:col-span-2 md:row-span-2">
+          <div className="relative overflow-hidden rounded-lg border border-titanium-dark bg-void p-7 md:col-span-2 md:row-span-2">
             <p className="font-body text-[16px] leading-[1.8] text-titanium-light">
               Dr. Ted Lewis has spent 40 years mastering the art and science of
               prosthodontics. Now he&apos;s training Tesla&apos;s Optimus robot
@@ -42,47 +49,32 @@ export function Authority() {
               pipeline that turns decades of human expertise into robotic
               capability.
             </p>
+            {/* Watermark */}
+            <UserRound
+              className="absolute bottom-6 right-6 text-titanium"
+              style={{ width: 120, height: 120, opacity: 0.04 }}
+              strokeWidth={1}
+            />
           </div>
 
-          {/* ─ Stat: 40+ Years ─ */}
-          <div className="rounded-lg border border-titanium-dark bg-void p-6 flex flex-col justify-center">
-            <div className="font-display text-[40px] font-bold leading-none tracking-[-1.5px]">
-              <NumberTicker value={40} delay={0.4} />+
-            </div>
-            <p className="mt-2 font-display text-[10px] font-semibold uppercase tracking-[2px] text-titanium">
-              Years in Prosthodontics
-            </p>
-          </div>
-
-          {/* ─ Stat: 800+ Adaptations ─ */}
-          <div className="rounded-lg border border-titanium-dark bg-void p-6 flex flex-col justify-center">
-            <div className="font-display text-[40px] font-bold leading-none tracking-[-1.5px]">
-              <NumberTicker value={800} delay={0.55} />+
-            </div>
-            <p className="mt-2 font-display text-[10px] font-semibold uppercase tracking-[2px] text-titanium">
-              Engineered Adaptations
-            </p>
-          </div>
-
-          {/* ─ Stat: 500+ DSO ─ */}
-          <div className="rounded-lg border border-titanium-dark bg-void p-6 flex flex-col justify-center">
-            <div className="font-display text-[40px] font-bold leading-none tracking-[-1.5px]">
-              <NumberTicker value={500} delay={0.7} />+
-            </div>
-            <p className="mt-2 font-display text-[10px] font-semibold uppercase tracking-[2px] text-titanium">
-              DSO Office Network
-            </p>
-          </div>
-
-          {/* ─ Stat: 15+ Training ─ */}
-          <div className="rounded-lg border border-titanium-dark bg-void p-6 flex flex-col justify-center">
-            <div className="font-display text-[40px] font-bold leading-none tracking-[-1.5px]">
-              <NumberTicker value={15} delay={0.85} />+
-            </div>
-            <p className="mt-2 font-display text-[10px] font-semibold uppercase tracking-[2px] text-titanium">
-              Years Training Surgeons
-            </p>
-          </div>
+          {/* ─ Stat Cards with Icons ─ */}
+          {authorityStats.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div
+                key={stat.label}
+                className="rounded-lg border border-titanium-dark bg-void p-6 flex flex-col justify-center"
+              >
+                <Icon className="mb-2 h-5 w-5 text-titanium" strokeWidth={1.5} />
+                <div className="font-display text-[40px] font-bold leading-none tracking-[-1.5px]">
+                  <NumberTicker value={stat.value} delay={stat.delay} />{stat.suffix}
+                </div>
+                <p className="mt-2 font-display text-[10px] font-semibold uppercase tracking-[2px] text-titanium">
+                  {stat.label}
+                </p>
+              </div>
+            );
+          })}
 
           {/* ─ Video Placeholder (spans 2 cols) ─ */}
           <div className="flex aspect-video items-center justify-center rounded-lg border border-titanium-dark bg-void md:col-span-2">
@@ -100,9 +92,12 @@ export function Authority() {
 
           {/* ─ IMU Technology (spans 2 cols) ─ */}
           <div className="relative overflow-hidden rounded-lg border border-titanium-dark bg-void p-7 md:col-span-2">
-            <p className="font-display text-[11px] font-semibold uppercase tracking-[3px] text-white-pure">
-              IMU Technology
-            </p>
+            <div className="flex items-center gap-2">
+              <Cpu className="h-5 w-5 text-titanium" strokeWidth={1.5} />
+              <p className="font-display text-[11px] font-semibold uppercase tracking-[3px] text-white-pure">
+                IMU Technology
+              </p>
+            </div>
             <p className="mt-3 font-body text-[14px] leading-[1.75] text-titanium-light">
               Inertial Measurement Unit sensors capture Dr. Lewis&apos;s hand
               movements in real-time — transferred directly to Optimus for
