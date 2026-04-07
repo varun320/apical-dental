@@ -20,7 +20,7 @@ export function SectionHeader({
   return (
     <div className={alignment}>
       <FadeIn>
-        <p className="font-mono text-[11px] font-normal uppercase tracking-[2.5px] text-muted">
+        <p className="font-mono text-[11px] font-normal uppercase tracking-[2.5px] text-secondary">
           {label}
         </p>
       </FadeIn>

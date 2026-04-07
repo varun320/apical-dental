@@ -18,7 +18,7 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="font-mono text-[10px] uppercase tracking-[2px] text-muted transition-colors hover:text-primary-text"
+                className="font-mono text-[10px] uppercase tracking-[2px] text-secondary transition-colors hover:text-primary-text"
               >
                 {item.label}
               </Link>
@@ -27,10 +27,10 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-3 border-t border-apical-border pt-10 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-[2px] text-muted">
+          <p className="font-mono text-[10px] uppercase tracking-[2px] text-secondary">
             &copy; {new Date().getFullYear()} Apical Dental. All rights reserved.
           </p>
-          <p className="font-mono text-[9px] uppercase tracking-[1.5px] text-muted/40">
+          <p className="font-mono text-[9px] uppercase tracking-[1.5px] text-secondary/40">
             The apex of the craft. In every sense.
           </p>
         </div>

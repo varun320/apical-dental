@@ -20,7 +20,7 @@ const marqueeItems = [
 
 export function DSOCase() {
   return (
-    <section className="relative border-t border-apical-border bg-void px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
+    <section className="relative  bg-void px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(139,139,168,0.3) 3px, rgba(139,139,168,0.3) 4px)" }} />
       <div className="pointer-events-none absolute -top-32 left-1/2 h-80 w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(0,212,200,0.03),transparent_70%)]" />
 

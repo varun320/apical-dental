@@ -20,7 +20,7 @@ export function CTA() {
   ) => setFormData((prev) => ({ ...prev, [field]: e.target.value }));
 
   return (
-    <section className="relative border-t border-apical-border bg-surface px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
+    <section className="relative  bg-surface px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
       <Ripple className="absolute inset-0 opacity-[0.8]" />
       {/* <RetroGrid className="absolute bottom-0 opacity-[0.02]" /> */}
 

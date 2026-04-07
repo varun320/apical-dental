@@ -41,7 +41,7 @@ export function DataCard({
 
       {label && (
         <p className={cn(
-          "font-mono text-[11px] uppercase tracking-[2.5px] text-muted",
+          "font-mono text-[11px] uppercase tracking-[2.5px] text-secondary",
           stat ? "mt-2" : ""
         )}>
           {label}

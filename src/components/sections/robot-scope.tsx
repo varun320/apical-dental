@@ -6,6 +6,7 @@ import { MagicCard } from "@/components/ui/magic-card";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import { Cog, ScanSearch, SprayCan, PackageCheck, MessageSquare, Wrench } from "lucide-react";
+import { RobotIllustration } from "@/components/ui/robot-illustration";
 
 const capabilities = [
   { icon: Cog, title: "Prosthetic Fabrication", description: "Surgical-grade dental prosthetics with superhuman precision. Every crown, bridge, and implant — perfect on delivery." },
@@ -18,23 +19,32 @@ const capabilities = [
 
 export function RobotScope() {
   return (
-    <section className="relative border-t border-apical-border bg-surface px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
+    <section className="relative bg-surface px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
       <DotPattern
         width={24} height={24} cr={0.6}
-        className={cn("absolute inset-0 text-apical-border/40", "mask-[radial-gradient(700px_circle_at_50%_50%,white,transparent)]")}
+        className={cn("mask-[radial-gradient(700px_circle_at_50%_50%,white,transparent)]")}
       />
       <div className="pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,212,200,0.02),transparent_60%)]" />
 
       <div className="relative z-10 mx-auto max-w-[1100px]">
-        <SectionHeader
-          label="Full Scope"
-          title="One robot. Every role."
-          description="Optimus assumes full practice automation — from fabrication to facility maintenance."
-          center
-        />
+        {/* Top: header left + robot right */}
+        <div className="grid gap-12 lg:grid-cols-[1fr_320px] lg:items-center">
+          <SectionHeader
+            label="Full Scope"
+            title="One robot. Every role."
+            description="Optimus assumes full practice automation — from fabrication to facility maintenance. In-office placement, staff training, location-specific customization, and ongoing service subscription included."
+          />
 
-        {/* BlurFade staggered cards with MagicCard spotlight */}
-        <div className="mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Robot illustration — sticky on desktop */}
+          <BlurFade delay={0.2} inView>
+            <div className="hidden lg:flex justify-center">
+              <RobotIllustration className="h-[360px] w-auto drop-shadow-[0_0_40px_rgba(0,212,200,0.08)]" />
+            </div>
+          </BlurFade>
+        </div>
+
+        {/* Cards grid */}
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((cap, i) => (
             <BlurFade key={cap.title} delay={0.15 + i * 0.08} inView>
               <MagicCard

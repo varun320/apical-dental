@@ -41,7 +41,7 @@ export function StagedPath() {
   }, []);
 
   return (
-    <section className="relative border-t border-apical-border bg-void px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
+    <section className="relative  bg-void px-6 py-28 lg:py-36 lg:px-10 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(13,13,28,0.5)_100%)]" />
       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-px bg-[linear-gradient(to_bottom,transparent,rgba(0,212,200,0.1)_50%,transparent)]" />
 
